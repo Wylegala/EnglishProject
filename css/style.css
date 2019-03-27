@@ -1,0 +1,45 @@
+body
+{
+  margin:0;
+  padding:0;
+}
+
+#header
+{
+  height: 45px;
+  width: 100%;
+  background-color: #e5282d;
+  line-height: 45px;
+}
+
+#content
+{
+  height: 300px;
+  width: 100%;
+  background-color: green;
+}
+
+#footer
+{
+  height: 100px;
+  width: 100%;
+  background-color: brown;
+}
+
+#menu > .menu_list
+{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+#menu > .menu_list > .menu_level_1
+{
+  float: left;
+  display: block;
+  height: 100%;
+  widht: 100px;
+  margin-right: 25px;
+}
