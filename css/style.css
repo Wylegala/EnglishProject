@@ -26,13 +26,28 @@ body
   background-color: brown;
 }
 
+#title
+{
+  height: 45px;
+  width: 200px;
+  float: left;
+  text-align: center;
+}
+
+#menu
+{
+  float: left;
+  height: 45px;
+  width: calc(100% - 200px);
+}
+
 #menu > .menu_list
 {
   margin: 0;
   padding: 0;
-  position: absolute;
-  top: 0px;
-  left: 200px;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #menu > .menu_list > .menu_level_1
