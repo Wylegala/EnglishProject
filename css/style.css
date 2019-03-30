@@ -37,12 +37,21 @@ body
 #page_title
 {
   height: 4.5rem;
-  width: 20rem;
+  width: 13.5rem;
+  padding-left: 6.5rem;
   float: left;
-  text-align: right;
   color: white;
   font-size: 3.5rem;
   font-family: 'Germania One', cursive;
+}
+
+#page_title > a
+{
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 4.5rem;
+  width: 100%;
 }
 
 #menu
