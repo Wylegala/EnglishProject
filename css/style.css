@@ -110,9 +110,9 @@ body
 #search_teaser
 {
   float: left;
-  margin-right: 55rem;
+  margin-right: calc(100% - 25rem - 35rem);
   width: 25rem;
-  height: 12rem;
+  height: 15rem;
   text-align: left;
 }
 
@@ -129,7 +129,7 @@ body
 #search_box
 {
   float: left;
-  width: 25rem;
+  width: 35rem;
   height: 12rem;
   text-align: center;
 }
@@ -151,16 +151,34 @@ body
 
 #search input
 {
+  width: 26rem;
   float: left;
-  width: 16rem;
   height: 5rem;
   border: none;
   line-height: 5rem;
   padding: 0 2rem;
   margin: 0;
   font-size: 1.6rem;
-  color: #969696;
+  color: #3b5998;
   font-family: 'Baloo Chettan', cursive;
+}
+
+#search input::placeholder
+{
+  color: #3b5998;
+  opacity: 1;
+}
+
+#search input::-ms-input-placeholder
+{
+  color: #3b5998;
+  opacity: 1;
+}
+
+#search input:-ms-input-placeholder
+{
+  color: #3b5998;
+  opacity: 1;
 }
 
 #search button
@@ -173,6 +191,12 @@ body
   border: none;
   padding: 0;
   font-family: 'Baloo Chettan', cursive;
+}
+
+#search button:hover
+{
+  background-color: #2a4887;
+  cursor: pointer;
 }
 
 /* -------------------- The end of search section styling ------------------------ */
