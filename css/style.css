@@ -8,6 +8,7 @@ html
   */
   font-size: 10px;
   font-family: 'Baloo Chettan', cursive;
+  color: white;
 }
 
 /*
@@ -89,10 +90,10 @@ body
 
 #search_section
 {
-  height: 40rem;
+  height: 35rem;
   background-image: url(../img/background1.png);
   background-size: cover;
-  padding-top: 5.5rem;
+  padding-top: 2rem;
 }
 
 #search_teaser
@@ -101,7 +102,17 @@ body
   margin-right: 55rem;
   width: 25rem;
   height: 12rem;
-  text-align: center;
+  text-align: left;
+}
+
+#search_teaser > p:first-child
+{
+  font-size: 2.5rem;
+}
+
+#search_teaser > p:last-child
+{
+  font-size: 1.7rem;
 }
 
 #search_box
