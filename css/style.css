@@ -66,7 +66,7 @@ body
   float: left;
   display: block;
   height: 4.5rem;
-  widht: 100px;
+  widht: 10rem;
   padding-left: 1.8rem;
   padding-right: 1.8rem;
 }
@@ -90,19 +90,26 @@ body
 #search_section
 {
   height: 40rem;
-  width: 100%;
   background-image: url(../img/background1.png);
   background-size: cover;
+  padding-top: 5.5rem;
+}
+
+#search_teaser
+{
+  float: left;
+  margin-right: 55rem;
+  width: 25rem;
+  height: 12rem;
+  text-align: center;
 }
 
 #search_box
 {
+  float: left;
   width: 25rem;
   height: 12rem;
   text-align: center;
-  position: absolute;
-  right: 15%;
-  top: 20%;
 }
 
 #search_title
