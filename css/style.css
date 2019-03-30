@@ -84,9 +84,20 @@ body
   color: white;
 }
 
+.icon-home
+{
+  font-size: 2.5rem;
+}
+
 /* -------------------- The end of header styling ------------------------ */
 
 /* -------------------- Search section styles ------------------------ */
+
+.icon-search
+{
+  color: white;
+  font-size: 2rem;
+}
 
 #search_section
 {
@@ -162,11 +173,6 @@ body
   border: none;
   padding: 0;
   font-family: 'Baloo Chettan', cursive;
-}
-
-#search button:hover
-{
-  background: #d4171c;
 }
 
 /* -------------------- The end of search section styling ------------------------ */
