@@ -8,6 +8,11 @@ html
   font-family: 'Baloo Chettan', cursive;
 }
 
+/*
+  Google search for the background:
+  https://www.google.com/search?biw=1280&bih=578&tbs=isz%3Al&tbm=isch&sa=1&ei=yGmfXOn5BOismwX7iIzQBg&q=book&oq=book&gs_l=img.3..0l10.9891.10560..10692...0.0..0.195.487.0j3......1....1..gws-wiz-img.N5921fTvVek#imgrc=Gu3aWKZdSIQvbM:
+*/
+
 body
 {
   margin:0;
@@ -24,9 +29,15 @@ body
 
 #content
 {
-  height: 30rem;
+
+}
+
+#search_section
+{
+  height: 40rem;
   width: 100%;
-  background-color: green;
+  background-image: url(../img/background1.png);
+  background-size: cover;
 }
 
 #footer
