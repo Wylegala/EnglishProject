@@ -98,7 +98,7 @@ body
 #search_box
 {
   width: 25rem;
-  height: 10rem;
+  height: 12rem;
   text-align: center;
   position: absolute;
   right: 15%;
@@ -115,7 +115,40 @@ body
 
 #search
 {
-  line-height: 3rem;
+  line-height: 3rem;\
+  width: inherit;
+  height: 5rem;
+}
+
+#search input
+{
+  float: left;
+  width: 16rem;
+  height: 5rem;
+  border: none;
+  line-height: 5rem;
+  padding: 0 2rem;
+  margin: 0;
+  font-size: 1.6rem;
+  color: #969696;
+  font-family: 'Baloo Chettan', cursive;
+}
+
+#search button
+{
+  float: left;
+  height: 5rem;
+  width: 5rem;
+  background: url(../images/search-button.29c949af667b.png) 0 0 no-repeat;
+  background-color: #e5282d;
+  border: none;
+  padding: 0;
+  font-family: 'Baloo Chettan', cursive;
+}
+
+#search button:hover
+{
+  background: #d4171c;
 }
 
 /* -------------------- The end of search section styling ------------------------ */
