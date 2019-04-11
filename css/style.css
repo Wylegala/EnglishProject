@@ -217,6 +217,27 @@ body
 
 }
 
+#search_results
+{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+#search_results > .container
+{
+  background-color: #3b5998;
+  max-width: 80rem;
+  padding: 30px;
+  border-radius: 25px;
+  border: 4px solid white;
+}
+
+#search_results .term_name
+{
+  text-transform: capitalize;
+  font-size: 3rem;
+}
+
 /* -------------------- The end of content styles ------------------------ */
 
 /* -------------------- Footer styles ------------------------ */

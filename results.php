@@ -62,40 +62,48 @@
       </div>
       <!--Page body-->
       <div id="content">
-        <?php
-					$connection = @new mysqli($host, $db_user, $db_password, $db_name);
-				  if ($connection->connect_errno!=0)
-				  {
-				    echo "Error: ".$connection->connect_errno;
-				  }
-				  else
-				  {
-						$search = $_POST['search'];
+				<div id="search_results">
+          <div class="container">
+		        <?php
+							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+						  if ($connection->connect_errno!=0)
+						  {
+						    echo "Error: ".$connection->connect_errno;
+						  }
+						  else
+						  {
+								$search = $_POST['search'];
 
-						$search = htmlentities($search, ENT_QUOTES, "UTF-8");
+								$search = htmlentities($search, ENT_QUOTES, "UTF-8");
 
-						if ($result = @$connection->query(
-						sprintf("SELECT * FROM terms WHERE name='%s'",
-						mysqli_real_escape_string($connection,$search))))
-						{
-							$count_results = $result->num_rows;
-							if($count_results>0)
-							{
-								echo "Jest hasło w bazie";
-							}
-							else {
-								echo "Nie ma hasła w bazie";
-							}
-						}
-						else {
-							header('Location: index.php');
-							exit();
-						}
-				  }
-				?>
+								$select_term = "SELECT * FROM terms WHERE name='%s'";
 
+								if ($result = @$connection->query(
+								sprintf("SELECT * FROM terms WHERE name='%s'",
+								mysqli_real_escape_string($connection,$search))))
+								{
+									$count_results = $result->num_rows;
+									if($count_results>0)
+									{
+										$term = $result->fetch_assoc();
 
-
+										echo "<p class='term_name'>".$term['name']."</p>";
+										echo "<p class='term_desc'>".$term['description']."</p>";
+									}
+									else
+									{
+										echo "Nie ma hasła w bazie";
+									}
+								}
+								else
+								{
+									header('Location: index.php');
+									exit();
+								}
+						  }
+						?>
+					</div>
+				</div>
       </div>
       <!--Footer section-->
       <div id="footer">
@@ -107,5 +115,6 @@
   </body>
 </html>
 <?php
+	$result->free_result();
 	$connection->close();
 ?>
