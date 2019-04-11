@@ -108,7 +108,7 @@
       <!--Footer section-->
       <div id="footer">
         <div class="container">
-          Footer
+          Footer placeholder
         </div>
       </div>
     </div>

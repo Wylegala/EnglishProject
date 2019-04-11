@@ -78,7 +78,7 @@
       <!--Footer section-->
       <div id="footer">
         <div class="container">
-          Footer
+          Footer plaholder
         </div>
       </div>
     </div>
