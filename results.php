@@ -1,3 +1,15 @@
+<?php
+	session_start();
+
+	if (!isset($_POST['search']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+
+	require_once "connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -50,30 +62,40 @@
       </div>
       <!--Page body-->
       <div id="content">
-        <!--Search section-->
-        <div id="search_section">
-          <div class="container">
-            <div id="search_teaser">
-              <p>Do not hesitate...</p>
-              <p>...unleash IT terms<br>and abbreviations now!</p>
-            </div>
-            <div id="search_box">
-              <div id="search_title">
-                IT Lexicon
-              </div>
-              <div id="search">
-                <form action="results.php" method="post">
-                  <input type="text" name="search" placeholder="Search..." maxlength="25">
-                  <button type="submit">
-                    <i class="icon-search"></i>
-                  </button>
-                  <div style="clear:both;"></div>
-                </form>
-              </div>
-            </div>
-            <div style="clear:both;"></div>
-          </div>
-        </div>
+        <?php
+					$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+				  if ($connection->connect_errno!=0)
+				  {
+				    echo "Error: ".$connection->connect_errno;
+				  }
+				  else
+				  {
+						$search = $_POST['search'];
+
+						$search = htmlentities($search, ENT_QUOTES, "UTF-8");
+
+						if ($result = @$connection->query(
+						sprintf("SELECT * FROM terms WHERE name='%s'",
+						mysqli_real_escape_string($connection,$search))))
+						{
+							$count_results = $result->num_rows;
+							if($count_results>0)
+							{
+								echo "Jest hasło w bazie";
+							}
+							else {
+								echo "Nie ma hasła w bazie";
+							}
+						}
+						else {
+							header('Location: index.php');
+							exit();
+						}
+				  }
+				?>
+
+
+
       </div>
       <!--Footer section-->
       <div id="footer">
@@ -84,3 +106,6 @@
     </div>
   </body>
 </html>
+<?php
+	$connection->close();
+?>
