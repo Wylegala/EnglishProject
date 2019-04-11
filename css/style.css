@@ -20,7 +20,7 @@ body
 {
   margin:0;
   padding:0;
-  background-color: #6e8bba;
+  background-color: #eee;
 }
 
 /* --------------------The end of global styles ------------------------ */
@@ -239,6 +239,156 @@ body
 }
 
 /* -------------------- The end of content styles ------------------------ */
+
+/* -------------------- Popular searches section ------------------------ */
+
+.section_title
+{
+  text-align: center;
+  font-size: 3rem;
+  border-bottom: 0.1rem solid #3b5998;
+  width: 40rem;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#popular_section
+{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  color: #3b5998;
+}
+
+#popular_terms
+{
+  width: 50rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+#popular_terms #term_1 a
+{
+  font-size: 2.6rem;
+  color: #444;
+}
+#popular_terms #term_2 a
+{
+  font-size: 1.8rem;
+  color: #eec42c;
+}
+#popular_terms #term_3 a
+{
+  font-size: 3.3rem;
+  color: #3b5998;
+}
+#popular_terms #term_4 a
+{
+  font-size: 2.6rem;
+  color: #444;
+}
+#popular_terms #term_5 a
+{
+  font-size: 3.1rem;
+  color: #eec42c;
+}
+#popular_terms #term_6 a
+{
+  font-size: 1.5rem;
+  color: #3b5998;
+}
+#popular_terms #term_7 a
+{
+  font-size: 2.3rem;
+  color: #444;
+}
+#popular_terms #term_8 a
+{
+  font-size: 3.1rem;
+  color: #eec42c;
+}
+#popular_terms #term_9 a
+{
+  font-size: 2.3rem;
+  color: #3b5998;
+}
+#popular_terms #term_10 a
+{
+  font-size: 3.8rem;
+  color: #444;
+}
+#popular_terms #term_11 a
+{
+  font-size: 2.6rem;
+  color: #eec42c;
+}
+#popular_terms #term_12 a
+{
+  font-size: 1.5rem;
+  color: #3b5998;
+}
+#popular_terms #term_13 a
+{
+  font-size: 1.3rem;
+  color: #444;
+}
+#popular_terms #term_14 a
+{
+  font-size: 2.6rem;
+  color: #eec42c;
+}
+#popular_terms #term_15 a
+{
+  font-size: 1.3rem;
+  color: #3b5998;
+}
+#popular_terms #term_16 a
+{
+  font-size: 3.3rem;
+  color: #444;
+}
+#popular_terms #term_17 a
+{
+  font-size: 3.3rem;
+  color: #eec42c;
+}
+#popular_terms #term_18 a
+{
+  font-size: 1.8rem;
+  color: #3b5998;
+}
+#popular_terms #term_19 a
+{
+  font-size: 3.1rem;
+  color: #444;
+}
+#popular_terms #term_20 a
+{
+  font-size: 1.5rem;
+  color: #eec42c;
+}
+
+#popular_terms span
+{
+  padding: 0.5rem;
+}
+
+#popular_terms span a
+{
+  text-decoration: none;
+  font-family: 'Germania One', cursive;
+}
+
+#popular_terms span a:hover
+{
+    text-decoration: underline;
+}
+
+/* -------------------- The end of popular section styles ------------------------ */
 
 /* -------------------- Footer styles ------------------------ */
 

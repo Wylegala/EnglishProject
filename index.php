@@ -74,6 +74,119 @@
             <div style="clear:both;"></div>
           </div>
         </div>
+        <div id="popular_section">
+          <div class="container">
+            <div class="section_title">
+              The most popular searches
+            </div>
+            <div id="popular_terms">
+              <span id="term_1">
+                <a href="#">
+                  Term 1
+                </a>
+              </span>
+              <span id="term_2">
+                <a href="#">
+                  Term 2
+                </a>
+              </span>
+              <span id="term_3">
+                <a href="#">
+                  Term 3
+                </a>
+              </span>
+              <span id="term_4">
+                <a href="#">
+                  Term 4
+                </a>
+              </span>
+              <br>
+              <span id="term_5">
+                <a href="#">
+                  Term 5
+                </a>
+              </span>
+              <span id="term_6">
+                <a href="#">
+                  Term 6
+                </a>
+              </span>
+              <span id="term_7">
+                <a href="#">
+                  Term 7
+                </a>
+              </span>
+              <span id="term_8">
+                <a href="#">
+                  Term 8
+                </a>
+              </span>
+              <br>
+              <span id="term_9">
+                <a href="#">
+                  Term 9
+                </a>
+              </span>
+              <span id="term_10">
+                <a href="#">
+                  Term 10
+                </a>
+              </span>
+              <span id="term_11">
+                <a href="#">
+                  Term 11
+                </a>
+              </span>
+              <span id="term_12">
+                <a href="#">
+                  Term 12
+                </a>
+              </span>
+              <br>
+              <span id="term_13">
+                <a href="#">
+                  Term 13
+                </a>
+              </span>
+              <span id="term_14">
+                <a href="#">
+                  Term 14
+                </a>
+              </span>
+              <span id="term_15">
+                <a href="#">
+                  Term 15
+                </a>
+              </span>
+              <span id="term_16">
+                <a href="#">
+                  Term 16
+                </a>
+              </span>
+              <br>
+              <span id="term_17">
+                <a href="#">
+                  Term 17
+                </a>
+              </span>
+              <span id="term_18">
+                <a href="#">
+                  Term 18
+                </a>
+              </span>
+              <span id="term_19">
+                <a href="#">
+                  Term 19
+                </a>
+              </span>
+              <span id="term_20">
+                <a href="#">
+                  Term 20
+                </a>
+              </span>
+            </dv>
+          </div>
+        </div>
       </div>
       <!--Footer section-->
       <div id="footer">
