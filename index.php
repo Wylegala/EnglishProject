@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	require_once "connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -80,110 +85,64 @@
               The most popular searches
             </div>
             <div id="popular_terms">
-              <span id="term_1">
-                <a href="#">
-                  Term 1
-                </a>
-              </span>
-              <span id="term_2">
-                <a href="#">
-                  Term 2
-                </a>
-              </span>
-              <span id="term_3">
-                <a href="#">
-                  Term 3
-                </a>
-              </span>
-              <span id="term_4">
-                <a href="#">
-                  Term 4
-                </a>
-              </span>
-              <br>
-              <span id="term_5">
-                <a href="#">
-                  Term 5
-                </a>
-              </span>
-              <span id="term_6">
-                <a href="#">
-                  Term 6
-                </a>
-              </span>
-              <span id="term_7">
-                <a href="#">
-                  Term 7
-                </a>
-              </span>
-              <span id="term_8">
-                <a href="#">
-                  Term 8
-                </a>
-              </span>
-              <br>
-              <span id="term_9">
-                <a href="#">
-                  Term 9
-                </a>
-              </span>
-              <span id="term_10">
-                <a href="#">
-                  Term 10
-                </a>
-              </span>
-              <span id="term_11">
-                <a href="#">
-                  Term 11
-                </a>
-              </span>
-              <span id="term_12">
-                <a href="#">
-                  Term 12
-                </a>
-              </span>
-              <br>
-              <span id="term_13">
-                <a href="#">
-                  Term 13
-                </a>
-              </span>
-              <span id="term_14">
-                <a href="#">
-                  Term 14
-                </a>
-              </span>
-              <span id="term_15">
-                <a href="#">
-                  Term 15
-                </a>
-              </span>
-              <span id="term_16">
-                <a href="#">
-                  Term 16
-                </a>
-              </span>
-              <br>
-              <span id="term_17">
-                <a href="#">
-                  Term 17
-                </a>
-              </span>
-              <span id="term_18">
-                <a href="#">
-                  Term 18
-                </a>
-              </span>
-              <span id="term_19">
-                <a href="#">
-                  Term 19
-                </a>
-              </span>
-              <span id="term_20">
-                <a href="#">
-                  Term 20
-                </a>
-              </span>
+              <?php
+  							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+  						  if ($connection->connect_errno!=0)
+  						  {
+  						    echo "Error: ".$connection->connect_errno;
+  						  }
+  						  else
+  						  {
+                  if ($result = @$connection->query("SELECT * FROM terms ORDER BY popularity DESC LIMIT 20"))
+  								{
+  									$count_results = $result->num_rows;
+  									if($count_results>0)
+  									{
+                      $i = 1;
+                      foreach($result as $term)
+                      {
+                        echo "<span id='term_".$i."'>";
+                          echo "<a href='#'>";
+                            echo $term['name'];
+                          echo "</a>";
+                        echo "</span>";
+                        switch($i)
+                        {
+                          case 4:
+                          {
+                            echo "<br>";
+                            break;
+                          }
+                          case 8:
+                          {
+                            echo "<br>";
+                            break;
+                          }
+                          case 12:
+                          {
+                            echo "<br>";
+                            break;
+                          }
+                          case 16:
+                          {
+                            echo "<br>";
+                            break;
+                          }
+                        }
+                        $i++;
+                      }
+  									}
+  									else
+  									{
+  										echo "Database connection error";
+  									}
+  								}
+  								else
+  								{
+  									echo "Database connection error";
+  								}
+                }
+              ?>
             </dv>
           </div>
         </div>

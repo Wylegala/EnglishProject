@@ -6,7 +6,6 @@
 		header('Location: index.php');
 		exit();
 	}
-
 	require_once "connect.php";
 ?>
 
@@ -76,8 +75,6 @@
 
 								$search = htmlentities($search, ENT_QUOTES, "UTF-8");
 
-								$select_term = "SELECT * FROM terms WHERE name='%s'";
-
 								if ($result = @$connection->query(
 								sprintf("SELECT * FROM terms WHERE name='%s'",
 								mysqli_real_escape_string($connection,$search))))
@@ -89,10 +86,13 @@
 
 										echo "<p class='term_name'>".$term['name']."</p>";
 										echo "<p class='term_desc'>".$term['description']."</p>";
+
+										$id = $term['id_terms'];
+										$connection->query("UPDATE terms SET popularity=popularity+1 WHERE id_terms='$id'");
 									}
 									else
 									{
-										echo "Nie ma hasła w bazie";
+										echo "<p class='term_name' style='font-size: 2rem;'>".$search." cannot be found. Please, try another term.</p>";
 									}
 								}
 								else
