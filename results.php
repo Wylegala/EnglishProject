@@ -1,7 +1,8 @@
 <?php
 	session_start();
 
-	if (!isset($_POST['search']))
+	//Check if anybody used search functionality. If not, redirect user back to index.php
+	if (!(isset($_POST['search']) || isset($_GET['search'])))
 	{
 		header('Location: index.php');
 		exit();
@@ -64,34 +65,50 @@
 				<div id="search_results">
           <div class="container">
 		        <?php
+							//open DB connection
 							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
 						  if ($connection->connect_errno!=0)
 						  {
+								//Error handler in case of unsuccessfull connection
 						    echo "Error: ".$connection->connect_errno;
 						  }
 						  else
 						  {
-								$search = $_POST['search'];
+								//Defining $search that will be used later on to refine data from DB
+								if(isset($_POST['search']))
+								{
+									$search = $_POST['search'];
+								}
+								elseif(isset($_GET['search']))
+								{
+									$search = $_GET['search'];
+								}
 
+								//Sanitization of entered phrase
 								$search = htmlentities($search, ENT_QUOTES, "UTF-8");
 
+								//DB query, search for mentioned term
 								if ($result = @$connection->query(
 								sprintf("SELECT * FROM terms WHERE name='%s'",
 								mysqli_real_escape_string($connection,$search))))
 								{
+									//Count and verify if any results
 									$count_results = $result->num_rows;
 									if($count_results>0)
 									{
+										//Get and display the term
 										$term = $result->fetch_assoc();
 
 										echo "<p class='term_name'>".$term['name']."</p>";
 										echo "<p class='term_desc'>".$term['description']."</p>";
 
+										//Increment popularity for given term
 										$id = $term['id_terms'];
 										$connection->query("UPDATE terms SET popularity=popularity+1 WHERE id_terms='$id'");
 									}
 									else
 									{
+										//Error handler - cannot find term in the DB
 										echo "<p class='term_name' style='font-size: 2rem;'>".$search." cannot be found. Please, try another term.</p>";
 									}
 								}
@@ -115,6 +132,7 @@
   </body>
 </html>
 <?php
+	//memory clean-up and closing DB connection
 	$result->free_result();
 	$connection->close();
 ?>

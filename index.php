@@ -1,4 +1,5 @@
 <?php
+	//start of php session
 	session_start();
 	require_once "connect.php";
 ?>
@@ -79,6 +80,7 @@
             <div style="clear:both;"></div>
           </div>
         </div>
+				<!--Popular searches section - 20 terms-->
         <div id="popular_section">
           <div class="container">
             <div class="section_title">
@@ -86,26 +88,34 @@
             </div>
             <div id="popular_terms">
               <?php
+								//Open DB connection
   							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
-  						  if ($connection->connect_errno!=0)
+								//Error handler
+								if ($connection->connect_errno!=0)
   						  {
   						    echo "Error: ".$connection->connect_errno;
   						  }
+								//If connected...
   						  else
   						  {
+									//DB query to get 20 the most popular terms
                   if ($result = @$connection->query("SELECT * FROM terms ORDER BY popularity DESC LIMIT 20"))
   								{
+										//Count if any results
   									$count_results = $result->num_rows;
   									if($count_results>0)
   									{
+											//Increment variable
                       $i = 1;
+											//Fetch and display each record
                       foreach($result as $term)
                       {
                         echo "<span id='term_".$i."'>";
-                          echo "<a href='#'>";
+                          echo "<a href='results.php?search=".$term['name']."'>";
                             echo $term['name'];
                           echo "</a>";
                         echo "</span>";
+												//Switch basing on $i to break line after each 4 terms
                         switch($i)
                         {
                           case 4:
@@ -129,6 +139,7 @@
                             break;
                           }
                         }
+												//Increment
                         $i++;
                       }
   									}
