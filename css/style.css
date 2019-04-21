@@ -208,34 +208,29 @@ body
   cursor: pointer;
 }
 
-
 /* -------------------- The end of search section styling ------------------------ */
 
 /* -------------------- Content styles ------------------------ */
-#content
-{
 
+.heading_block
+{
+  height: 35rem;
+  background-image: url(../img/background1.png);
+  background-size: cover;
+  padding-top: 0.1rem;
 }
 
-#search_results
+.heading_block > .container
 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  text-align: center;
+  line-height: 35rem;
+  font-size: 4rem;
 }
 
-#search_results > .container
+.heading_block p
 {
-  background-color: #3b5998;
-  max-width: 80rem;
-  padding: 3rem;
-  border-radius: 2.5rem;
-  border: 0.2rem solid white;
-}
-
-#search_results .term_name
-{
-  text-transform: capitalize;
-  font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
 
 /* -------------------- The end of content styles ------------------------ */
@@ -390,7 +385,34 @@ body
 }
 
 /* -------------------- The end of popular section styles ------------------------ */
+/* -------------------- Results styles ------------------------ */
 
+#results
+{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #3b5998;
+}
+
+.result_name
+{
+  text-align: center;
+  font-size: 3rem;
+  border-bottom: 0.1rem solid #3b5998;
+  width: 25rem;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+.result_desc
+{
+  text-align: center;
+
+}
+
+/* -------------------- The end of results section styles ------------------------ */
 /* -------------------- Footer styles ------------------------ */
 
 #footer
@@ -401,6 +423,12 @@ body
   text-align: center;
   line-height: 5rem;
   border-top: 0.05rem solid white;
+}
+
+.footer_fixed
+{
+  position: fixed;
+  bottom: 0;
 }
 
 #footer > .container
