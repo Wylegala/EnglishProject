@@ -39,7 +39,7 @@
                   <i class="icon-home"></i>
                 </li>
               </a>
-              <a href="#">
+              <a href="search.php">
                 <li class="menu_level_1">
                   Search a Word
                 </li>

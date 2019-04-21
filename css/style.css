@@ -114,6 +114,7 @@ body
   background-image: url(../img/background1.png);
   background-size: cover;
   padding-top: 2rem;
+  border-bottom: 0.2rem solid #3b5998;
 }
 
 #search_teaser
@@ -218,6 +219,7 @@ body
   background-image: url(../img/background1.png);
   background-size: cover;
   padding-top: 0.1rem;
+  border-bottom: 0.2rem solid #3b5998;
 }
 
 .heading_block > .container
@@ -225,12 +227,6 @@ body
   text-align: center;
   line-height: 35rem;
   font-size: 4rem;
-}
-
-.heading_block p
-{
-  margin: 0;
-  padding: 0;
 }
 
 /* -------------------- The end of content styles ------------------------ */
@@ -413,6 +409,56 @@ body
 }
 
 /* -------------------- The end of results section styles ------------------------ */
+/* -------------------- Search page styles ------------------------ */
+
+#term_list
+{
+  color: #3b5998;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#term_list .body
+{
+  float: left;
+  background-color: red;
+  width: calc(100% - 5.1rem - 2.5rem);
+  padding-right: 2.5rem;
+}
+
+#term_list .nav
+{
+  float: left;
+  width: 5rem;
+  text-align: center;
+  border-left: 0.1rem solid #3b5998;
+}
+
+#term_list .nav span
+{
+  display: inline-block;
+  height: 2.2rem;
+  width: 5rem;
+}
+
+#term_list .nav a
+{
+  display: block;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  color: #3b5998;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#term_list .nav a:hover
+{
+  border-bottom: 0.2rem solid blue;
+}
+
+/* -------------------- The end of search page styles ------------------------ */
 /* -------------------- Footer styles ------------------------ */
 
 #footer
