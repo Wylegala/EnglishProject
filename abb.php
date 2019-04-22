@@ -54,40 +54,20 @@
           <div style="clear:both"></div>
         </div>
       </div>
+
       <!--Page body-->
       <div id="content">
-        <!--Search section-->
-        <div id="search_section">
+        <div class="heading_block">
           <div class="container">
-            <div id="search_teaser">
-              <p>Do not hesitate...</p>
-              <p>...unleash IT terms<br>and abbreviations now!</p>
-            </div>
-            <div id="search_box">
-              <div id="search_title">
-                IT Lexicon
-              </div>
-              <div id="search">
-                <form action="results.php" method="post">
-                  <input type="text" name="search" placeholder="Search..." maxlength="25">
-                  <button type="submit">
-                    <i class="icon-search"></i>
-                  </button>
-                  <div style="clear:both;"></div>
-                </form>
-              </div>
-            </div>
-            <div style="clear:both;"></div>
+            Search a Word
           </div>
         </div>
-				<!--Popular searches section - 20 terms-->
-        <div id="popular_section">
+
+        <div id="term_list">
           <div class="container">
-            <div class="section_title">
-              The most popular searches
-            </div>
-            <div id="popular_terms">
-              <?php
+
+            <div class="body">
+							<?php
 								//Open DB connection
   							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
 								//Error handler
@@ -99,53 +79,46 @@
   						  else
   						  {
 									//DB query to get 20 the most popular terms
-                  if ($result = @$connection->query("SELECT * FROM terms ORDER BY popularity DESC LIMIT 20"))
+                  if ($category = @$connection->query("SELECT category FROM terms GROUP BY category ORDER BY category"))
   								{
 										//Count if any results
-  									$count_results = $result->num_rows;
-  									if($count_results>0)
+  									$count_categories = $category->num_rows;
+  									if($count_categories>0)
   									{
-											//Increment variable
-                      $i = 1;
 											//Fetch and display each record
-                      foreach($result as $term)
+                      foreach($category as $cat)
                       {
-                        echo "<span id='term_".$i."'>";
-                          echo "<a href='results.php?search=".$term['name']."'>";
-                            echo $term['name'];
-                          echo "</a>";
-                        echo "</span>";
-												//Switch basing on $i to break line after each 4 terms
-                        switch($i)
-                        {
-                          case 4:
-                          {
-                            echo "<br>";
-                            break;
-                          }
-                          case 8:
-                          {
-                            echo "<br>";
-                            break;
-                          }
-                          case 12:
-                          {
-                            echo "<br>";
-                            break;
-                          }
-                          case 16:
-                          {
-                            echo "<br>";
-                            break;
-                          }
-                        }
-												//Increment
-                        $i++;
+												$c = $cat['category'];
+												echo "<div id='".$c."' class='term_category'>".$cat['category']."</div>";
+
+												if ($result = @$connection->query("SELECT * FROM terms WHERE category='$c'"))
+			  								{
+													$count_result = $result->num_rows;
+			  									if($count_result>0)
+			  									{
+														//Fetch and display each record
+			                      foreach($result as $term)
+			                      {
+															echo "<div class='term_name'><a href='results.php?search=".$term['name']."'>".$term['name']."</a></div>";
+
+															$desc = implode(' ', array_slice(explode(' ', $term['description']), 0, 20))."...";
+															echo "<div class='term_desc'>".$desc."</div>";
+														}
+													}
+													else
+													{
+														echo "No terms";
+													}
+												}
+												else
+												{
+													echo "Database error";
+												}
                       }
   									}
   									else
   									{
-  										echo "Database connection error";
+  										echo "No categories";
   									}
   								}
   								else
@@ -154,10 +127,40 @@
   								}
                 }
               ?>
-            </dv>
+            </div>
+
+						<div class="nav">
+							<span><a href="#a">A</a></span><br>
+							<span><a href="#b">B</a></span><br>
+							<span><a href="#c">C</a></span><br>
+							<span><a href="#d">D</a></span><br>
+							<span><a href="#e">E</a></span><br>
+							<span><a href="#f">F</a></span><br>
+							<span><a href="#g">G</a></span><br>
+							<span><a href="#h">H</a></span><br>
+							<span><a href="#i">I</a></span><br>
+							<span><a href="#j">J</a></span><br>
+							<span><a href="#k">K</a></span><br>
+							<span><a href="#l">L</a></span><br>
+							<span><a href="#m">M</a></span><br>
+							<span><a href="#n">N</a></span><br>
+							<span><a href="#o">O</a></span><br>
+							<span><a href="#p">P</a></span><br>
+							<span><a href="#r">R</a></span><br>
+							<span><a href="#s">S</a></span><br>
+							<span><a href="#t">T</a></span><br>
+							<span><a href="#u">U</a></span><br>
+							<span><a href="#w">W</a></span><br>
+							<span><a href="#x">X</a></span><br>
+							<span><a href="#y">Y</a></span><br>
+							<span><a href="#z">Z</a></span>
+						</div>
+
+            <div style="clear:both;"></div>
           </div>
         </div>
       </div>
+
       <!--Footer section-->
       <div id="footer">
         <div class="container">
@@ -169,6 +172,6 @@
 </html>
 <?php
 	//memory clean-up and closing DB connection
-	$result->free_result();
+
 	$connection->close();
 ?>

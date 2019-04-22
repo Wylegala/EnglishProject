@@ -38,12 +38,12 @@
                   Search a Word
                 </li>
               </a>
-              <a href="#">
+              <a href="abb.php">
                 <li class="menu_level_1">
                   Abbreviations
                 </li>
               </a>
-              <a href="#">
+              <a href="about.html">
                 <li class="menu_level_1">
                   About the Lexicon
                 </li>
@@ -170,3 +170,9 @@
     </div>
   </body>
 </html>
+<?php
+	//memory clean-up and closing DB connection
+	$category->free_result();
+	$result->free_result();
+	$connection->close();
+?>

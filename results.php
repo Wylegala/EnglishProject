@@ -44,12 +44,12 @@
                   Search a Word
                 </li>
               </a>
-              <a href="#">
+              <a href="abb.php">
                 <li class="menu_level_1">
                   Abbreviations
                 </li>
               </a>
-              <a href="#">
+              <a href="about.html">
                 <li class="menu_level_1">
                   About the Lexicon
                 </li>
