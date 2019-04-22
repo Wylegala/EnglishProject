@@ -164,7 +164,7 @@
       <!--Footer section-->
       <div id="footer">
         <div class="container">
-          Footer plaholder
+          Footer placeholder
         </div>
       </div>
     </div>
