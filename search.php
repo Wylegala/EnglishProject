@@ -67,35 +67,95 @@
           <div class="container">
 
             <div class="body">
-              Body
+							<?php
+								//Open DB connection
+  							$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+								//Error handler
+								if ($connection->connect_errno!=0)
+  						  {
+  						    echo "Error: ".$connection->connect_errno;
+  						  }
+								//If connected...
+  						  else
+  						  {
+									//DB query to get 20 the most popular terms
+                  if ($category = @$connection->query("SELECT category FROM terms GROUP BY category ORDER BY category"))
+  								{
+										//Count if any results
+  									$count_categories = $category->num_rows;
+  									if($count_categories>0)
+  									{
+											//Fetch and display each record
+                      foreach($category as $cat)
+                      {
+												$c = $cat['category'];
+												echo "<div id='".$c."' class='term_category'>".$cat['category']."</div>";
+
+												if ($result = @$connection->query("SELECT * FROM terms WHERE category='$c'"))
+			  								{
+													$count_result = $result->num_rows;
+			  									if($count_result>0)
+			  									{
+														//Fetch and display each record
+			                      foreach($result as $term)
+			                      {
+															echo "<div class='term_name'><a href='results.php?search=".$term['name']."'>".$term['name']."</a></div>";
+
+															$desc = implode(' ', array_slice(explode(' ', $term['description']), 0, 20))."...";
+															echo "<div class='term_desc'>".$desc."</div>";
+														}
+													}
+													else
+													{
+														echo "No terms";
+													}
+												}
+												else
+												{
+													echo "Database error";
+												}
+                      }
+  									}
+  									else
+  									{
+  										echo "No categories";
+  									}
+  								}
+  								else
+  								{
+  									echo "Database connection error";
+  								}
+                }
+              ?>
             </div>
 
-            <div class="nav">
-              <span><a href="#a">A</a></span><br>
-              <span><a href="#b">B</a></span><br>
-              <span><a href="#c">C</a></span><br>
-              <span><a href="#d">D</a></span><br>
-              <span><a href="#e">E</a></span><br>
-              <span><a href="#f">F</a></span><br>
-              <span><a href="#g">G</a></span><br>
-              <span><a href="#h">H</a></span><br>
-              <span><a href="#i">I</a></span><br>
-              <span><a href="#j">J</a></span><br>
-              <span><a href="#k">K</a></span><br>
-              <span><a href="#l">L</a></span><br>
-              <span><a href="#m">M</a></span><br>
-              <span><a href="#n">N</a></span><br>
-              <span><a href="#o">O</a></span><br>
-              <span><a href="#p">P</a></span><br>
-              <span><a href="#r">R</a></span><br>
-              <span><a href="#s">S</a></span><br>
-              <span><a href="#t">T</a></span><br>
-              <span><a href="#u">U</a></span><br>
-              <span><a href="#w">W</a></span><br>
-              <span><a href="#x">X</a></span><br>
-              <span><a href="#y">Y</a></span><br>
-              <span><a href="#z">Z</a></span>
-            </div>
+						<div class="nav">
+							<span><a href="#a">A</a></span><br>
+							<span><a href="#b">B</a></span><br>
+							<span><a href="#c">C</a></span><br>
+							<span><a href="#d">D</a></span><br>
+							<span><a href="#e">E</a></span><br>
+							<span><a href="#f">F</a></span><br>
+							<span><a href="#g">G</a></span><br>
+							<span><a href="#h">H</a></span><br>
+							<span><a href="#i">I</a></span><br>
+							<span><a href="#j">J</a></span><br>
+							<span><a href="#k">K</a></span><br>
+							<span><a href="#l">L</a></span><br>
+							<span><a href="#m">M</a></span><br>
+							<span><a href="#n">N</a></span><br>
+							<span><a href="#o">O</a></span><br>
+							<span><a href="#p">P</a></span><br>
+							<span><a href="#r">R</a></span><br>
+							<span><a href="#s">S</a></span><br>
+							<span><a href="#t">T</a></span><br>
+							<span><a href="#u">U</a></span><br>
+							<span><a href="#w">W</a></span><br>
+							<span><a href="#x">X</a></span><br>
+							<span><a href="#y">Y</a></span><br>
+							<span><a href="#z">Z</a></span>
+						</div>
+
             <div style="clear:both;"></div>
           </div>
         </div>
