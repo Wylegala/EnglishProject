@@ -59,7 +59,7 @@
       <div id="content">
         <div class="heading_block">
           <div class="container">
-            Search a Word
+            Abbreviations
           </div>
         </div>
 
@@ -79,7 +79,7 @@
   						  else
   						  {
 									//DB query to get 20 the most popular terms
-                  if ($category = @$connection->query("SELECT category FROM terms GROUP BY category ORDER BY category"))
+                  if ($category = @$connection->query("SELECT category FROM abb GROUP BY category ORDER BY category"))
   								{
 										//Count if any results
   									$count_categories = $category->num_rows;
@@ -91,17 +91,17 @@
 												$c = $cat['category'];
 												echo "<div id='".$c."' class='term_category'>".$cat['category']."</div>";
 
-												if ($result = @$connection->query("SELECT * FROM terms WHERE category='$c'"))
+												if ($result = @$connection->query("SELECT * FROM abb WHERE category='$c'"))
 			  								{
 													$count_result = $result->num_rows;
 			  									if($count_result>0)
 			  									{
 														//Fetch and display each record
-			                      foreach($result as $term)
+			                      foreach($result as $abb)
 			                      {
-															echo "<div class='term_name'><a href='results.php?search=".$term['name']."'>".$term['name']."</a></div>";
+															echo "<div class='term_name'><a href='results.php?search=".$abb['name']."'>".$abb['abb']." - ".$abb['name']."</a></div>";
 
-															$desc = implode(' ', array_slice(explode(' ', $term['description']), 0, 20))."...";
+															$desc = implode(' ', array_slice(explode(' ', $abb['description']), 0, 20))."...";
 															echo "<div class='term_desc'>".$desc."</div>";
 														}
 													}
@@ -172,6 +172,7 @@
 </html>
 <?php
 	//memory clean-up and closing DB connection
-
+  $result->free_result();
+  $category->free_result();
 	$connection->close();
 ?>
