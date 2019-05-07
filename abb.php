@@ -99,7 +99,10 @@
 														//Fetch and display each record
 			                      foreach($result as $abb)
 			                      {
-															echo "<div class='term_name'><a href='results.php?search=".$abb['name']."'>".$abb['abb']." - ".$abb['name']."</a></div>";
+															echo "<div class='term_name'>
+																<a href='results_abb.php?search=".$abb['name']."'>
+																	".$abb['abb']."<span class='term_name_full'> - ".$abb['name']."</span></a>
+															</div>";
 
 															$desc = implode(' ', array_slice(explode(' ', $abb['description']), 0, 20))."...";
 															echo "<div class='term_desc'>".$desc."</div>";

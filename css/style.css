@@ -485,7 +485,12 @@ body
 #term_list .term_name
 {
   margin-left: 4rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
+}
+
+#term_list .term_name_full
+{
+  font-size: 1.5rem;
 }
 
 #term_list .term_name a
@@ -501,10 +506,11 @@ body
 
 #term_list .term_desc
 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   margin-left: 8rem;
   font-size: 1.3rem;
+  font-family: 'Germania One', cursive;
 }
 
 /* -------------------- The end of search page styles ------------------------ */
