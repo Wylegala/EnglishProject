@@ -425,9 +425,32 @@ body
 
 #term_list .body
 {
+  position: relative;
   float: left;
   width: calc(100% - 5.1rem - 2.5rem);
   padding-right: 2.5rem;
+}
+
+#term_list .body #top_btn
+{
+  display: none;
+  position: fixed;
+  bottom: 5.5rem;
+  right: 11rem;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #3b5998;
+  color: white;
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+}
+
+#term_list .body #top_btn:hover
+{
+  background-color: #2a4887;
 }
 
 #term_list .nav
