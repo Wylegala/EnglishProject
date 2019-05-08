@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/fontello.css"> <!--Fontello icons-->
     <link rel="stylesheet" href="css/bootstrap.css"> <!--additional css code based on bootstrap-->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Germania+One" rel="stylesheet"> <!--google fonts-->
+
+		<script type="text/javascript" src="top.js"></script>
   </head>
   <body>
     <div>
@@ -130,6 +132,8 @@
   								}
                 }
               ?>
+
+							<button onclick="topFunction()" id="top_btn" title="Go to top">/|\</button>
             </div>
 
 						<div class="nav">

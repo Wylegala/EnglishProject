@@ -130,8 +130,7 @@
                 }
               ?>
 
-						<button onclick="topFunction()" id="top_btn" title="Go to top">I</button>
-
+							<button onclick="topFunction()" id="top_btn" title="Go to top">/|\</button>
             </div>
 
 						<div class="nav">
