@@ -55,11 +55,32 @@ body
   width: 100%;
 }
 
+#user_box
+{
+  float: left;
+  height: 4.5rem;
+  width: 10rem;
+  text-align: center;
+}
+
+#user_box a
+{
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+#user_box a:hover
+{
+  height: 4.3rem;
+  border-bottom: 0.2rem solid white;
+}
+
 #menu
 {
   float: left;
   height: 4.5rem;
-  width: calc(100% - 20rem);
+  width: calc(100% - 20rem - 10rem);
 }
 
 #menu > .menu_list
@@ -561,6 +582,106 @@ body
 }
 
 /* -------------------- The end of footer styling ------------------------ */
+
+/* -------------------- Login styles ------------------------ */
+
+#login
+{
+  width: 40rem;
+  height: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 5rem;
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  border: 0.2rem solid white;
+  background-color: #3b5998;
+  color: white;
+}
+
+#login form
+{
+  display: block;
+  margin: 0;
+}
+
+#login form .inputs
+{
+  float: left;
+  width: 30rem;
+  height: 11rem;
+}
+
+#login form input
+{
+  width: 26rem;
+  height: 5rem;
+  border: none;
+  border-radius: 1rem;
+  line-height: 5rem;
+  padding: 0 2rem;
+  margin: 0;
+  font-size: 1.6rem;
+  color: #3b5998;
+  font-family: 'Baloo Chettan', cursive;
+}
+
+#login form input:first-child
+{
+  margin-bottom: 1rem;
+}
+
+#login form button
+{
+  float: left;
+  height: 5rem;
+  width: 7.5rem;
+  background-color: #3b5998;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: 'Baloo Chettan', cursive;
+  margin-top: 3rem;
+  margin-left: 2.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+#login form button:hover
+{
+  color: #3b5998;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#login .login_links
+{
+  height: 5rem:
+  width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+#login .login_links a
+{
+  display: block;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+#login .login_links a:hover
+{
+  text-decoration: underline;
+}
+
+/* -------------------- The end of login page styling ------------------------ */
 
 /* -------------------- Media queries ------------------------ */
 

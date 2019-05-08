@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.css"> <!--additional css code based on bootstrap-->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Germania+One" rel="stylesheet"> <!--google fonts-->
 
-		<script type="text/javascript" src="top.js"></script>
+		<script type="text/javascript" src="js/top.js"></script>
   </head>
   <body>
     <div>

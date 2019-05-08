@@ -20,7 +20,8 @@
       <!--Page header-->
       <div id="header">
         <div class="container">
-          <div id="page_title"> <!--page title/logo section-->
+					<!--page title/logo section-->
+          <div id="page_title">
             <a href="index.php">
               IT Lexicon
             </a>
@@ -51,6 +52,9 @@
               <li style="clear:both;"></li>
             </ul>
           </div>
+					<div id="user_box">
+						<a href="login.php">Login</a>
+					</div>
           <div style="clear:both"></div>
         </div>
       </div>
