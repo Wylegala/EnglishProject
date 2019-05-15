@@ -102,11 +102,13 @@
 									$_SESSION['type'] = $user['type'];
 
 									header('Location: index.php');
+									exit();
 								}
 								else
 								{
 									$_SESSION['error'] = "Incorrect login or password";
-									header('Location: index.php');
+									header('Location: login.php');
+									exit();
 								}
 							}
 						}
@@ -115,7 +117,7 @@
 
         <form action="login.php" method="post">
           <div class="inputs">
-            <input type="text" name="login" placeholder="Login" maxlength="50" required>
+            <input type="text" name="login" placeholder="Login" maxlength="20" required>
             <input type="password" name="pass" placeholder="Password" maxlength="35" required>
           </div>
 

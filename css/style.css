@@ -59,15 +59,35 @@ body
 {
   float: left;
   height: 4.5rem;
-  width: 10rem;
+  width: 20rem;
   text-align: center;
 }
 
-#user_box a
+#user_box > *
 {
   text-decoration: none;
   color: white;
   display: block;
+  margin: 0;
+  float: left;
+}
+
+#user_box p
+{
+  width: 15rem;
+  height: 100%;
+}
+
+#user_box a
+{
+  width: 10rem;
+  height: 100%;
+}
+
+#user_box #user_menu
+{
+  width: 5rem;
+  height: 100%;
 }
 
 #user_box a:hover
@@ -80,7 +100,7 @@ body
 {
   float: left;
   height: 4.5rem;
-  width: calc(100% - 20rem - 10rem);
+  width: calc(100% - 20rem - 20rem);
 }
 
 #menu > .menu_list
@@ -583,9 +603,9 @@ body
 
 /* -------------------- The end of footer styling ------------------------ */
 
-/* -------------------- Login styles ------------------------ */
+/* -------------------- Login & Register styles ------------------------ */
 
-#login
+#login, #register
 {
   width: 40rem;
   height: 15rem;
@@ -601,20 +621,20 @@ body
   color: white;
 }
 
-#login form
+#login form, #register form
 {
   display: block;
   margin: 0;
 }
 
-#login form .inputs
+#login form .inputs, #register form .inputs
 {
   float: left;
   width: 30rem;
   height: 11rem;
 }
 
-#login form input
+#login form input, #register form input
 {
   width: 26rem;
   height: 5rem;
@@ -626,14 +646,15 @@ body
   font-size: 1.6rem;
   color: #3b5998;
   font-family: 'Baloo Chettan', cursive;
+  margin-top: 1rem;
 }
 
-#login form input:first-child
+#login form input:first-child, #register form input:first-child
 {
-  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
-#login form button
+#login form button, #register form button
 {
   float: left;
   height: 5rem;
@@ -649,7 +670,7 @@ body
   font-size: 2rem;
 }
 
-#login form button:hover
+#login form button:hover, #register form button:hover
 {
   color: #3b5998;
   background-color: white;
@@ -657,7 +678,7 @@ body
   cursor: pointer;
 }
 
-#login .login_links
+#login .login_links, #register .login_links
 {
   height: 5rem:
   width: 40rem;
@@ -667,7 +688,7 @@ body
   padding-left: 0.5rem;
 }
 
-#login .login_links a
+#login .login_links a, #register .login_links a
 {
   display: block;
   height: 2.5rem;
@@ -676,9 +697,89 @@ body
   color: white;
 }
 
-#login .login_links a:hover
+#login .login_links a:hover, #register .login_links a:hover
 {
   text-decoration: underline;
+}
+
+#register
+{
+  height: 100%;
+  width: 42.5rem;
+}
+
+#register form
+{
+  height: 24rem;
+  width: 42.5rem;
+}
+
+#register form .inputs
+{
+  height: 24rem;
+}
+
+#register form button
+{
+  margin-top: 9rem;
+  width: 10rem;
+}
+
+#register .login_links
+{
+  margin-top: 3rem;
+  margin-bottom: -2rem;
+}
+
+#register #register_success
+{
+  text-align: center;
+}
+
+#register #register_success span
+{
+  font-size: 2.5rem;
+}
+
+#register #register_success a
+{
+  display: block;
+  height: 3rem;
+  width: 10rem;
+  background-color: #3b5998;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: 'Baloo Chettan', cursive;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+#register #register_success a:hover
+{
+  color: #3b5998;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#register .login_links
+{
+  margin-top: 1rem;
+}
+
+#form_error
+{
+  display: block;
+  height: 2rem;
+  width: 40rem;
+  padding-left: 0.5rem;
+  text-align: left;
+  color: #AD0B03;
 }
 
 /* -------------------- The end of login page styling ------------------------ */
