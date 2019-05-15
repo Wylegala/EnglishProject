@@ -53,7 +53,16 @@
             </ul>
           </div>
 					<div id="user_box">
-						<a href="login.php">Login</a>
+						<?php
+							if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
+							{
+								echo "<a href='logout.php'>Logout</a>";
+							}
+							else
+							{
+								echo "<a href='login.php'>Login</a>";
+							}
+						?>
 					</div>
           <div style="clear:both"></div>
         </div>

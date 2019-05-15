@@ -58,7 +58,16 @@
             </ul>
           </div>
           <div id="user_box">
-            <a href="login.php">Login</a>
+						<?php
+							if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
+							{
+								echo "<a href='logout.php'>Logout</a>";
+							}
+							else
+							{
+								echo "<a href='login.php'>Login</a>";
+							}
+						?>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -66,10 +75,48 @@
 
       <div id="login">
         <?php
-        	if (isset($_POST['login']) && isset($_POST['pass']))
+
+					if (isset($_POST['login']) && isset($_POST['pass']))
         	{
-            //$pass = password_hash($_POST['pass'], 2);
-            //echo $pass;
+						$connection = @new mysqli($host, $db_user, $db_password, $db_name);
+						if ($connection->connect_errno!=0)
+						{
+							//Error handler in case of unsuccessfull connection
+							echo "Error: ".$connection->connect_errno;
+						}
+						else
+						{
+							$login = $_POST['login'];
+							$pass = $_POST['pass'];
+
+							$login = htmlentities($login, ENT_QUOTES, "UTF-8");
+							$pass = htmlentities($pass, ENT_QUOTES, "UTF-8");
+
+							if ($result = @$connection->query(
+							sprintf("SELECT * FROM users WHERE login='%s' AND pass='%s'",
+							mysqli_real_escape_string($connection,$login),
+							mysqli_real_escape_string($connection,$pass))))
+							{
+								$count_users = $result->num_rows;
+								if($count_users>0)
+								{
+									$_SESSION['logged'] = true;
+
+									$user = $result->fetch_assoc();
+
+									$_SESSION['user'] = $user['login'];
+									$_SESSION['email'] = $user['email'];
+									$_SESSION['type'] = $user['type'];
+
+									header('Location: index.php');
+								}
+								else
+								{
+									$_SESSION['error'] = "Incorrect login or password";
+									header('Location: index.php');
+								}
+							}
+						}
         	}
         ?>
 
@@ -99,3 +146,8 @@
     </div>
   </body>
 </html>
+<?php
+	//memory clean-up and closing DB connection
+	$result->free_result();
+	$connection->close();
+?>
