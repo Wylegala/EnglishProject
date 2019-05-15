@@ -44,7 +44,7 @@
                   Abbreviations
                 </li>
               </a>
-              <a href="about.html">
+              <a href="about.php">
                 <li class="menu_level_1">
                   About the Lexicon
                 </li>
@@ -54,14 +54,7 @@
           </div>
 					<div id="user_box">
 						<?php
-							if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-							{
-								echo "<a href='logout.php'>Logout</a>";
-							}
-							else
-							{
-								echo "<a href='login.php'>Login</a>";
-							}
+							require_once "user_box.php";
 						?>
 					</div>
           <div style="clear:both"></div>

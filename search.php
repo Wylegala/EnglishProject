@@ -45,7 +45,7 @@
                   Abbreviations
                 </li>
               </a>
-              <a href="about.html">
+              <a href="about.php">
                 <li class="menu_level_1">
                   About the Lexicon
                 </li>
@@ -53,6 +53,11 @@
               <li style="clear:both;"></li>
             </ul>
           </div>
+					<div id="user_box">
+						<?php
+							require_once "user_box.php";
+						?>
+					</div>
           <div style="clear:both"></div>
         </div>
       </div>
