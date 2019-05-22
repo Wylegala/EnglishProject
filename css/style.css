@@ -737,7 +737,7 @@ body
 
 #login .login_links a, #register .login_links a
 {
-  display: block;
+  
   height: 2.5rem;
   line-height: 2.5rem;
   text-decoration: none;

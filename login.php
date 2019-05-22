@@ -132,6 +132,7 @@
 
         <div class="login_links">
           <a href="forgot.php">Forgot password?</a>
+					<br>
           <a href="register.php">Don't have account yet? Register</a>
         </div>
 
