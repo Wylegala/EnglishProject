@@ -116,12 +116,16 @@
 									//Error handler - cannot find abb in the DB
 									echo "<p class='term_name' style='font-size: 2rem;'>".$search." cannot be found. Please, try another abbreviation.</p>";
 								}
+
+								$result->free_result();
 							}
 							else
 							{
 								header('Location: index.php');
 								exit();
 							}
+
+							$connection->close();
 						}
 					?>
 				</div>
@@ -135,8 +139,3 @@
     </div>
   </body>
 </html>
-<?php
-	//memory clean-up and closing DB connection
-	$result->free_result();
-	$connection->close();
-?>

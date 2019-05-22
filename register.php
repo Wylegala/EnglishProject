@@ -142,10 +142,13 @@
                       header('Location: register.php');
                       exit();
                     }
+										
+										$result->free_result();
                   }
                 }
+
+								$connection->close();
               }
-              $connection->close();
             }
             else
             {

@@ -153,11 +153,15 @@
   									{
   										echo "Database connection error";
   									}
+
+										$result->free_result();
   								}
   								else
   								{
   									echo "Database connection error";
   								}
+
+									$connection->close();
                 }
               ?>
             </dv>
@@ -173,8 +177,3 @@
     </div>
   </body>
 </html>
-<?php
-	//memory clean-up and closing DB connection
-	$result->free_result();
-	$connection->close();
-?>

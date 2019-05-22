@@ -119,6 +119,8 @@
 													{
 														echo "No terms";
 													}
+
+													$result->free_result();
 												}
 												else
 												{
@@ -130,11 +132,15 @@
   									{
   										echo "No categories";
   									}
+
+										$category->free_result();
   								}
   								else
   								{
   									echo "Database connection error";
   								}
+
+									$connection->close();
                 }
               ?>
 
@@ -182,9 +188,3 @@
     </div>
   </body>
 </html>
-<?php
-	//memory clean-up and closing DB connection
-  $result->free_result();
-  $category->free_result();
-	$connection->close();
-?>

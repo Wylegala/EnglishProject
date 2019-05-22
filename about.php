@@ -83,8 +83,3 @@
     </div>
   </body>
 </html>
-<?php
-	//memory clean-up and closing DB connection
-	$result->free_result();
-	$connection->close();
-?>
