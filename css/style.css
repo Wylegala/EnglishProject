@@ -59,7 +59,7 @@ body
 {
   float: left;
   height: 4.5rem;
-  width: 20rem;
+  width: 27rem;
   text-align: center;
   position: relative;
 }
@@ -75,7 +75,7 @@ body
 
 #user_box p
 {
-  width: 15rem;
+  width: 22rem;
   height: 100%;
 }
 
@@ -89,6 +89,11 @@ body
 {
   height: 4.3rem;
   border-bottom: 0.2rem solid white;
+}
+
+#user_box > #sign_in
+{
+  margin-left: 7rem;
 }
 
 #user_box #menu_trigger
@@ -146,7 +151,7 @@ body
 {
   float: left;
   height: 4.5rem;
-  width: calc(100% - 20rem - 20rem);
+  width: calc(100% - 20rem - 27rem);
 }
 
 #menu > .menu_list
@@ -737,7 +742,7 @@ body
 
 #login .login_links a, #register .login_links a
 {
-  
+
   height: 2.5rem;
   line-height: 2.5rem;
   text-decoration: none;

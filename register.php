@@ -142,7 +142,7 @@
                       header('Location: register.php');
                       exit();
                     }
-										
+
 										$result->free_result();
                   }
                 }
@@ -154,7 +154,7 @@
             {
               echo "<form action='register.php' method='post'>
               <div class='inputs'>
-              <input type='text' name='login' placeholder='Login' maxlength='20' required>
+              <input type='text' name='login' placeholder='Login' maxlength='15' required>
               <input type='email' name='email' placeholder='Email' maxlength='40' required>
               <input type='password' name='pass_1' placeholder='Password' maxlength='35' required>
               <input type='password' name='pass_2' placeholder='Repeat Password' maxlength='35' required>

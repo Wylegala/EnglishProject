@@ -162,7 +162,7 @@
 							echo "<span class='forgot_title'>Remind password</span>";
 							echo "<form action='forgot.php' method='post'>
 							<div class='inputs'>
-							<input type='text' name='login' placeholder='Login' maxlength='20' required>
+							<input type='text' name='login' placeholder='Login' maxlength='15' required>
 							<input type='email' name='email' placeholder='Email' maxlength='40' required>
 							</div>
 

@@ -14,7 +14,7 @@
   }
   else
   {
-    echo "<a href='login.php'>Sign in</a>";
+    echo "<a id='sign_in' href='login.php'>Sign in</a>";
     echo "<a href='register.php'>Register</a>";
     echo "<a style='clear:both; display:none;'></a>";
   }
