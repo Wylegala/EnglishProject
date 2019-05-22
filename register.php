@@ -162,15 +162,13 @@
               <div style='clear:both;'></div>
               </form>";
 
-              echo "<span id='form_error'>";
+              echo "<span class='form_error'>";
                 if(isset($_SESSION['error']))
                 {
                   echo $_SESSION['error'];
                   unset($_SESSION['error']);
                 }
               echo "</span>";
-
-
 
               echo "<div class='login_links'>
               <a href='login.php'>Already have an account? Sign in</a>

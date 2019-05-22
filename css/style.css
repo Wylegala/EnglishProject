@@ -605,10 +605,10 @@ body
 
 /* -------------------- Login & Register styles ------------------------ */
 
-#login, #register
+#login, #register, #forgot
 {
   width: 40rem;
-  height: 15rem;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10rem;
@@ -621,20 +621,20 @@ body
   color: white;
 }
 
-#login form, #register form
+#login form, #register form, #forgot form
 {
   display: block;
   margin: 0;
 }
 
-#login form .inputs, #register form .inputs
+#login form .inputs, #register form .inputs, #forgot form .inputs
 {
   float: left;
   width: 30rem;
   height: 11rem;
 }
 
-#login form input, #register form input
+#login form input, #register form input, #forgot form input
 {
   width: 26rem;
   height: 5rem;
@@ -649,12 +649,12 @@ body
   margin-top: 1rem;
 }
 
-#login form input:first-child, #register form input:first-child
+#login form input:first-child, #register form input:first-child, #forgot form input:first-child
 {
   margin-top: 0;
 }
 
-#login form button, #register form button
+#login form button, #register form button, #forgot form button
 {
   float: left;
   height: 5rem;
@@ -670,7 +670,7 @@ body
   font-size: 2rem;
 }
 
-#login form button:hover, #register form button:hover
+#login form button:hover, #register form button:hover, #forgot form button:hover
 {
   color: #3b5998;
   background-color: white;
@@ -731,17 +731,18 @@ body
   margin-bottom: -2rem;
 }
 
-#register #register_success
+#register #register_success, #forgot #forgot_success
 {
   text-align: center;
 }
 
-#register #register_success span
+#register #register_success span, #forgot #forgot_success span
 {
   font-size: 2.5rem;
 }
 
-#register #register_success a
+
+#register #register_success a, #forgot #forgot_success a
 {
   display: block;
   height: 3rem;
@@ -759,7 +760,7 @@ body
   text-decoration: none;
 }
 
-#register #register_success a:hover
+#register #register_success a:hover, #forgot #forgot_success a:hover
 {
   color: #3b5998;
   background-color: white;
@@ -772,7 +773,7 @@ body
   margin-top: 1rem;
 }
 
-#form_error
+.form_error
 {
   display: block;
   height: 2rem;
@@ -780,6 +781,20 @@ body
   padding-left: 0.5rem;
   text-align: left;
   color: #AD0B03;
+}
+
+.forgot_title
+{
+  font-size: 2rem;
+  display: block;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+#forgot .form_error
+{
+  margin-top: 2rem;
+  margin-bottom: -2rem;
 }
 
 /* -------------------- The end of login page styling ------------------------ */
