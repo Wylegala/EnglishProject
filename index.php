@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/fontello.css"> <!--Fontello icons-->
     <link rel="stylesheet" href="css/bootstrap.css"> <!--additional css code based on bootstrap-->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Germania+One" rel="stylesheet"> <!--google fonts-->
-  </head>
+	</head>
   <body>
     <div>
       <!--Page header-->
