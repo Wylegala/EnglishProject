@@ -135,7 +135,7 @@
                 }
               ?>
 
-							<button onclick="topFunction()" id="top_btn" title="Go to top">/|\</button>
+							<button onclick="topFunction()" id="top_btn" title="Go to top"><i class="icon-up"></i></button>
             </div>
 
 						<div class="nav">

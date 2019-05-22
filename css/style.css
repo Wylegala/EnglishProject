@@ -110,7 +110,7 @@ body
   width: 12.5rem;
   position: absolute;
   top: 4.5rem;
-  right: 0;
+  right: -3.5rem;
   z-index: 10;
   background-color: #3b5998;
 }
@@ -207,7 +207,7 @@ body
 #search_teaser
 {
   float: left;
-  margin-right: calc(100% - 25rem - 35rem);
+  margin-right: calc(100% - 25rem - 46rem);
   width: 25rem;
   height: 15rem;
   text-align: left;
@@ -229,6 +229,7 @@ body
   width: 35rem;
   height: 12rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 #search_title
